@@ -1,0 +1,1 @@
+export const categoryActionType="CATEGORY_ASYNC_TYPES";

@@ -1,0 +1,1 @@
+export const homeAsyncType = "HOME_ASYNC_TYPES";
