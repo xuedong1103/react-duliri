@@ -16,7 +16,7 @@ import {withRouter} from "react-router-dom"
     }
      
     render() {
-       let {location} = this.props;
+        let {location} = this.props;
        
         let locationList=[];
         if(location.data){
@@ -33,7 +33,6 @@ import {withRouter} from "react-router-dom"
         }
         console.log(locationList);
         return (
-            
             <PageContainer>
                     <SearchBar
                         value={this.state.value}
@@ -80,6 +79,7 @@ import {withRouter} from "react-router-dom"
     }
 
     componentDidMount(){
+        
         this.props.handleAsyncLocation();
     }
     handleChangeRegion(id,name){

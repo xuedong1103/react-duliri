@@ -70,7 +70,7 @@ export const CategoryListContainer=styled.div`
                 margin-right:0.1rem;
         }
         .brandTitle{
-                font-size:12px;
+                font-size:11px;
                 height:0.3rem;
                 line-height:0.3rem;
                 margin-left:0.06rem;

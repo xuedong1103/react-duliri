@@ -51,7 +51,8 @@ import {connect} from "react-redux"
     }
 
     componentDidMount(){
-        this.props.handleAsyncCategory()
+        let ci=localStorage.getItem("cityId")
+        this.props.handleAsyncCategory(ci)
     }
 
 }

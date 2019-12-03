@@ -123,7 +123,6 @@ import {connect} from "react-redux";
     }
   
     handleToCategory(){
-        console.log(1);
         this.props.history.push("/category")
     }
 

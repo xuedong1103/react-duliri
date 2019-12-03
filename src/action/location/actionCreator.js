@@ -10,10 +10,10 @@ export const locationAsyncAction = ()=>{
     }
 }
 
-export const regionAsyncAction = ()=>{
+export const regionAsyncAction = (ci)=>{
     let regionAction  = createAction(regionAsyncType,(data)=>({data:data}))
     return async (dispatch)=>{
-        let data = await regionApi();
+        let data = await regionApi(ci);
         dispatch(regionAction(data.district));
     }
 

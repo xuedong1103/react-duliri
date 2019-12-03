@@ -4,7 +4,7 @@ export const mapStateToProps = (state)=>({
     region:state.region.region,
 })
 export const mapDispatchToProps = (dispatch)=>({
-    handleAsyncRegion(){
-        dispatch(regionAsyncAction())
+    handleAsyncRegion(ci){
+        dispatch(regionAsyncAction(ci))
     }
 })

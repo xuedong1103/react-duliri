@@ -133,7 +133,7 @@ class Category extends Component{
                             <List className="my-list">
                                 {
                                     regionList.map((item)=>(
-                                        <List.Item key={item.id}>{item.name}</List.Item>
+                                        <List.Item key={item.id} onClick={this.handleChangeFlagFalse.bind(this)}>{item.name}</List.Item>
                                     ))
                                 }
                             </List>
@@ -158,7 +158,7 @@ class Category extends Component{
 
                         </div>
                         <div style={{ display:(flag==true?"block":"none"), justifyContent: 'center', height: '100%', backgroundColor: '#fff' }}>
-                            Content of four tab
+                           筛选
                         </div>   
                     </Tabs>      
                 </StickyContainer>
@@ -170,7 +170,8 @@ class Category extends Component{
         )
     }
     componentDidMount(){
-        this.props.handleAsyncRegion()
+        let ci=localStorage.getItem('cityId');
+        this.props.handleAsyncRegion(ci)
     }
 
     
