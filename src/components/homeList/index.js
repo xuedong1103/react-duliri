@@ -78,7 +78,8 @@ class HomeList extends Component{
         // console.log(1);
         // let  stick_ids="["+2+"]"
         // this.props.handleAsyncHome(3,310100,stick_ids);
-        this.props.handleAsyncHome();
+        let cityId=localStorage.getItem('cityId')
+        this.props.handleAsyncHome(cityId);
         // this.refs.scroll.handlepullingUp(()=>{
             
         // })

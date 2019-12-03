@@ -11,7 +11,10 @@ export default class BscrollContent extends Component {
     }
     componentDidMount(){
         this.scroll = new Bscroll(this.refs.wrapper,{
-            pullUpLoad:true
+            pullUpLoad:true,
+            probeType:1,
+            click:true,
+            tap:true
         })
     }
     handlepullingUp(callback){

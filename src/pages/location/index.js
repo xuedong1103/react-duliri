@@ -31,6 +31,7 @@ import {withRouter} from "react-router-dom"
                 hotCity.push(locationList[i])
             }
         }
+        console.log(locationList);
         return (
             
             <PageContainer>
@@ -51,7 +52,7 @@ import {withRouter} from "react-router-dom"
                         <div className="hotCity">
                            {
                                 hotCity.map((item)=>(
-                                    <span key={item.id}>{item.nm}</span>
+                                    <span key={item.id} data-id={item.id} onClick={this.handleChangeRegion.bind(this,item.id,item.nm)}>{item.nm}</span>
                                 ))
                             }
                         </div>
@@ -61,7 +62,7 @@ import {withRouter} from "react-router-dom"
                         </List>
                         {   
                             locationList.map((item)=>(
-                                    <List renderHeader={() => item.nm} className="my-list" key={item.id}>
+                                    <List renderHeader={() => item.nm} className="my-list" key={item.id} data-id={item.id} onClick={this.handleChangeRegion.bind(this,item.id,item.nm)}>
                                     </List>
                                
                             ))
@@ -81,7 +82,11 @@ import {withRouter} from "react-router-dom"
     componentDidMount(){
         this.props.handleAsyncLocation();
     }
-
+    handleChangeRegion(id,name){
+        localStorage.setItem('cityId',id);
+        localStorage.setItem('cityName',name)
+        this.props.history.push('/home');
+    }
 
 }
 export default Location;

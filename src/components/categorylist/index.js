@@ -16,8 +16,9 @@ import {connect} from "react-redux"
         }else{
             listItem=[]
         }
+        let {style}=this.props;
         return (
-            <CategoryListContainer> 
+            <CategoryListContainer style={style}> 
                 <Fragment>
                     {
                         listItem.map((item)=>(

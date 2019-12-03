@@ -8,6 +8,7 @@ export const CategoryListContainer=styled.div`
         margin-top:0.44rem;
         display:block;
         overflow-y:auto;
+        display:${props=>props.style};
         .content{
                 height:1rem;
                 background:#fff;
