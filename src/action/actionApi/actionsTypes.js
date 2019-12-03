@@ -1,0 +1,1 @@
+export const cityListType = "CITY_LIST";

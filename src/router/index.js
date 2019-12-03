@@ -5,10 +5,14 @@ import {
     Login,
     Location,
     Category,
+    // Find,
+    // Order,
+    // Register,
 } from "pages"
 
 
-
+import Personinfo from "../pages/personinfo/index"
+import EducaTion from "../pages/personinfo/education"
 export const TabBarRoute = [
     {
         path:"/home",
@@ -20,6 +24,24 @@ export const TabBarRoute = [
         text:"首页",
              
     },
+    // {
+    //     path:"/find",
+    //     component:Find,
+    //     meta:{
+    //         flag:true
+    //     },
+    //     icon:"\ue663",
+    //     text:"发现"
+    // },
+    // {
+    //     path:"/order",
+    //     component:Order,
+    //     meta:{
+    //         flag:true
+    //     },
+    //     icon:"\ue737",
+    //     text:"订单"
+    // },
     {
         path:"/job",
         component:Job,
@@ -57,6 +79,26 @@ export const NoTabBarRoute = [
         component:Category,
         meta:{
            
+        }
+    },
+    // {
+    //     path:"/register",
+    //     component:Register,
+    //     meta:{},
+    //     text:"注册"
+    // },
+    {
+        path:"/personinfo",
+        component:Personinfo,
+        meta:{
+    
+        }
+    },
+    {
+        path:"/education",
+        component:EducaTion,
+        meta:{
+    
         }
     }
     

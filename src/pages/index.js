@@ -35,3 +35,19 @@ export const Category=Loadable({
     loader:_=>import("./category"),
     loading:Loading
 })
+
+
+export const Find = Loadable({
+    loader:_=>import("./find"),
+    loading:Loading
+})
+
+export const Order = Loadable({
+    loader:_=>import("./order"),
+    loading:Loading
+})
+
+export const Register = Loadable({
+    loader:_=>import("./register"),
+    loading:Loading
+})
