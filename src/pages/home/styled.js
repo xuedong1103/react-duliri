@@ -71,7 +71,9 @@ export const HomeContainer = styled.main`
                 position:relative;
                 z-index:1;
                 background:#fff;
+
                 div{
+                    cursor:pointer;
                     display:flex;
                     flex-direction:column;
                     align-items:center;
@@ -81,7 +83,7 @@ export const HomeContainer = styled.main`
                     margin-top:0.04rem;
                     width:0.2rem;
                     height:0.2rem;
-                    touch-action: none; 
+                   
                 }
             }
         section{
@@ -107,6 +109,8 @@ export const HomeContainer = styled.main`
             a{
                 margin-left:0.1rem;
                 color:#333;
+               
+               
             }
         }`
     /* .content{

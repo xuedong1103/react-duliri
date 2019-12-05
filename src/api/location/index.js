@@ -6,10 +6,10 @@ const locationApi = ()=>http.get({
     },
 })
 
- const regionApi = ()=>http.get({
+ const regionApi = (ci)=>http.get({
     url:"/ajax/filterCinemas",
     data:{
-        ci:10
+        ci
     },
     headers:{
         "content-type":"application/json",
