@@ -105,9 +105,9 @@ import {connect} from "react-redux";
                                 </HashRouter>
                                 <section>
                                     <div className="contentTitle">
-                                        <NavLink to="/home/recommend">精选推荐</NavLink>
-                                        <NavLink to="/home/partTimeJob">打牌兼职</NavLink>
-                                        <NavLink to="/home/employment">优先上岗</NavLink>
+                                        <NavLink to="/home/recommend" >精选推荐</NavLink>
+                                        <NavLink to="/home/partTimeJob" >打牌兼职</NavLink>
+                                        <NavLink to="/home/employment" >优先上岗</NavLink>
                                     </div>
                                   
                                     <HomeList />
