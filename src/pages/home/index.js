@@ -35,12 +35,13 @@ import {connect} from "react-redux";
         }, 100);
       }
     render() {
+        let cityName=localStorage.getItem('cityName');
         return (
             <PageContainer>
                 <HomeContainer>
                 <div className="title">
                     <div className="location">
-                        <NavLink to="/location">北京</NavLink>
+                        <NavLink to="/location">{cityName}</NavLink>
                         {/* <Icon type="down" /> */}
                     </div>
                     <div className="inputBtn" >
@@ -80,23 +81,23 @@ import {connect} from "react-redux";
                                 </div>
                                 <HashRouter>
                                     <nav>
-                                        <div to="/category">
+                                        <div onClick={this.handleToCategory.bind(this)}>
                                             <img src="https://image.duliday.com/quanbu20190506@2x.png?imageMogr2/auto-orient/thumbnail/!60x60r/gravity/Center/crop/60x60"/>
-                                            <span>全部</span>
+                                            <span onClick={this.handleToCategory.bind(this)}>全部</span>
                                         </div>
-                                        <div to="/category">
+                                        <div onClick={this.handleToCategory.bind(this)}>
                                             <img src="https://image.duliday.com/fujin20190506@2x.png?imageMogr2/auto-orient/thumbnail/!60x60r/gravity/Center/crop/60x60"/>
                                             <span>附近</span>
                                         </div>
-                                        <div to="/category">
+                                        <div onClick={this.handleToCategory.bind(this)}>
                                             <img src="https://image.duliday.com/zhoumo20190506@2x.png?imageMogr2/auto-orient/thumbnail/!60x60r/gravity/Center/crop/60x60"/>
                                             <span>周末</span>
                                         </div>
-                                        <div to="/category">
+                                        <div onClick={this.handleToCategory.bind(this)}>
                                             <img src="https://image.duliday.com/rijie20190506@2x.png?imageMogr2/auto-orient/thumbnail/!60x60r/gravity/Center/crop/60x60"/>
                                             <span>日结</span>
                                         </div>
-                                        <div to="/category">
+                                        <div onClick={this.handleToCategory.bind(this)}>
                                             <img src="https://image.duliday.com/pinpai20190506@2x.png?imageMogr2/auto-orient/thumbnail/!60x60r/gravity/Center/crop/60x60"/>
                                             <span>品牌</span>
                                         </div>
@@ -104,32 +105,12 @@ import {connect} from "react-redux";
                                 </HashRouter>
                                 <section>
                                     <div className="contentTitle">
-                                        <NavLink to="/home/recommend">精选推荐</NavLink>
-                                        <NavLink to="/home/partTimeJob">打牌兼职</NavLink>
-                                        <NavLink to="/home/employment">优先上岗</NavLink>
+                                        <NavLink to="/home/recommend" >精选推荐</NavLink>
+                                        <NavLink to="/home/partTimeJob" >打牌兼职</NavLink>
+                                        <NavLink to="/home/employment" >优先上岗</NavLink>
                                     </div>
-                                    {/* <div className="content">
-                                        <div>
-                                            <span className="jobTitle">UR（lcm）</span>
-                                            <span className="jobBrand">大品牌</span>
-                                            <span className="jobTime">22元/小时</span>
-                                        </div>
-                                        <div className="jobInfo">
-                                            <span className="jobSign">
-                                                月结 | 男女不限 | 服务员 | 长期招聘
-                                            </span>
-                                            <span className="jobLocation">
-                                                浦东新区 
-                                                15km
-                                            </span>
-                                        </div>
-                                        <div className="brand">
-                                            <img className="brandImg" src="https://image.duliday.com/eed4bb7f728c35c3498e5c74b8af66a8?imageMogr2/auto-orient/thumbnail/!60x60r/gravity/Center/crop/60x60"/>
-                                            <span className="brandTitle"> UR </span>
-                                            <span className="sendTime">发布于14小时之前</span>
-                                        </div>
-                                    </div> */}
-                                    <HomeList/>
+                                  
+                                    <HomeList />
 
                                 </section>
                             </div>
@@ -140,20 +121,10 @@ import {connect} from "react-redux";
             </PageContainer>
         )
     }
-    // componentWillUpdate(){
-    //     this.refs.scroll.handlepullingUp();
-    // }
-    // componentDidMount(){
-    //     this.handleAsyncData();
-    //     this.refs.scroll.handlepullingUp(()=>{
-    //         this.handleAsyncData();
-    //     })
-    // }
-    // handleAsyncData(){
-    //    // this.props.handleAsyncHome();
-    //     //console.log(this.porps);
-    // }
-   
+  
+    handleToCategory(){
+        this.props.history.push("/category")
+    }
 
 }
 export default Home;

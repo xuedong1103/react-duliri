@@ -3,7 +3,7 @@ export const mapStateToProps = (state)=>({
     categorylist:state.categorylist.categorylist
 })
 export const mapDispatchToProps = (dispatch)=>({
-    handleAsyncCategory(){
-        dispatch(categoryAsyncAction())
+    handleAsyncCategory(ci){
+        dispatch(categoryAsyncAction(ci))
     }
 })

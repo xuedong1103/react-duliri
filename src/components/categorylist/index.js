@@ -16,8 +16,9 @@ import {connect} from "react-redux"
         }else{
             listItem=[]
         }
+        let {style}=this.props;
         return (
-            <CategoryListContainer> 
+            <CategoryListContainer style={style}> 
                 <Fragment>
                     {
                         listItem.map((item)=>(
@@ -50,7 +51,8 @@ import {connect} from "react-redux"
     }
 
     componentDidMount(){
-        this.props.handleAsyncCategory()
+        let ci=localStorage.getItem("cityId")
+        this.props.handleAsyncCategory(ci)
     }
 
 }
