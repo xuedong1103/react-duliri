@@ -26,6 +26,8 @@ const post = (options) => {
         method:"POST",
         body:qs.stringify(options.data),
         headers:{
+            "content-type":"application/json",
+
              "content-type":"application/x-www-form-urlencoded",
             ...options.headers
         }

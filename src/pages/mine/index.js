@@ -1,60 +1,22 @@
 import React, { Component, Fragment } from 'react'
 import { MineContainer, Headimage, Minecontent } from "./styled"
-// import {Route,HashRouter,NavLink,Link} from "react-router-dom"//路由跳转
-// import {routeEach} from "../../utils/routeEach";
-// import {MineRoute} from "../../router/minerouter"
+// import {Route,HashRouter,Link} from "react-router-dom"//路由跳转
+import {MineBarRoute} from "../../router/minerouter"
 import {withRouter} from "react-router-dom"
 @withRouter
 class Mine extends Component {
     constructor() {
         super()
         this.state = {
-            navList: [
-                {
-                    text: "我的简历",
-                    icon:"\ue737",
-                    id: 1
-                },
-                {
-                    text: "我的收藏",
-                    icon:"\ue60d",
-                    id: 2
-                },
-                {
-                    text: "实名认证",
-                    icon:"\ue78e",
-                    id: 3
-                },
-                {
-                    text: "我的钱包",
-                    icon:"\ue664",
-                    id: 4
-                },
-                {
-                    text: "我的信用",
-                    icon:"\ue62a",
-                    id: 5
-                },
-                {
-                    text: "健康证",
-                    icon:"\ue737",
-                    id: 6
-                },
-                {
-                    text: "求职意向设置",
-                    icon:"\ue78e",
-                    id: 7
-                }, {
-                    text: "用户反馈",
-                    icon:"\ue737",
-                    id: 8
-                }
-            ]
+            
+            name:JSON.parse(localStorage.getItem("userInfo")) ,
         }
 
     }
     render() {
-
+        // console.log(localStorage.getItem("userInfo"))//显示本地存储的信息
+        let {name} = this.state
+        console.log(this.props)
         let {navList} = this.state;
         return (
             <Fragment>
@@ -70,7 +32,7 @@ class Mine extends Component {
                     <div  className="imgbox" >
                         <div><i className="iconfont icon-wode"></i></div>
                         <div>
-                            <p>独立日</p>
+                            <p>{name["name"]}</p>
                             <button>未认证</button>
                         </div>
                     </div>
@@ -78,13 +40,15 @@ class Mine extends Component {
                   
                 </Headimage>
                 <Minecontent>
-                    <ul>
-                        {
-                            navList.map((item, index) => (
-                            <li key={index} onClick={this.handleSwitchFunction.bind(this,item)}><i className="iconfont">{item.icon}</i><span>{item.text}</span></li>
-                            ))
-                        }
-                    </ul>
+               
+                        <ul>
+                            {
+                                MineBarRoute.map((item, index) => (
+                                    
+                                <li key={index} onClick={this.handleSwitchFunction.bind(this,item.path)}><i className="iconfont">{item.meta.icon}</i><span>{item.meta.text}</span></li>
+                                ))
+                            }
+                        </ul>
 
                 </Minecontent>
             </Fragment>
@@ -95,8 +59,10 @@ class Mine extends Component {
         this.props.history.push("/Personinfo")
         console.log("Personinfo")
     }
-    handleSwitchFunction(){
-        console.log("Toggle");
+    handleSwitchFunction(path){
+        // console.log(path);
+        this.props.history.push(path);
+      
     }
 }
 

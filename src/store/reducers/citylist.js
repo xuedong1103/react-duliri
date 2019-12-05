@@ -1,14 +1,14 @@
 import {handleActions} from "redux-actions";
-import {homeAsyncType} from "../../action/home/actionTypes"
+import {cityListType} from "../../action/actionApi/actionsTypes"
 //类型错误 要做改动为cityListType
 const defaultState = {
-    home_choice:[]
+    list_city:[]
 }
 
 export default handleActions({
-    [homeAsyncType]:(state,action)=>{
+    [cityListType]:(state,action)=>{
         let homeState = JSON.parse(JSON.stringify(state));
-        homeState.home_choice = action.payload.data;
+        homeState.list_city = action.payload.data;
         // console.log(action.payload.data)
         return homeState
     }

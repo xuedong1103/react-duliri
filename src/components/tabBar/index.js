@@ -6,6 +6,7 @@ import {withRouter} from "react-router-dom";
 class TabBar extends Component {
     render() {
         let {path} = this.props;
+        console.log(path)
         return (
             <TabBarContainer>
                     <ul>
@@ -22,6 +23,7 @@ class TabBar extends Component {
         )
     }
     handleTo(path){
+        // console.log(path)
         this.props.history.push(path);
     }
 }

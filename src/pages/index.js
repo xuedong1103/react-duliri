@@ -19,7 +19,18 @@ export const Mine = Loadable({
     loading:Loading
 })
 
-
+export const Collection = Loadable({
+    loader:_=>import("./mine/collection"),
+    loading:Loading
+})
+export const Realname = Loadable({
+    loader:_=>import("./mine/realname"),
+    loading:Loading
+})
+export const Resume = Loadable({
+    loader:_=>import("./mine/resume"),
+    loading:Loading
+})
 
 export const Login = Loadable({
     loader:_=>import("./login"),
@@ -49,5 +60,10 @@ export const Order = Loadable({
 
 export const Register = Loadable({
     loader:_=>import("./register"),
+    loading:Loading
+})
+
+export const Personinfo = Loadable({
+    loader:_=>import("./personinfo"),
     loading:Loading
 })

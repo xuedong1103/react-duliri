@@ -9,7 +9,7 @@ export const week_choiceApi = ()=>http.get({
 })
 
 export const cityApi =(kw) =>http.get({//获取猫眼电影名进行渲染数据(模拟大学名称)
-    url:"ajax/ajax/search",
+    url:"/ajax/search",
     data:{
         kw:kw,
         cityId: 1,

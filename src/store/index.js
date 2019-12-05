@@ -5,11 +5,15 @@ import home from "./reducers/home";
 import location from "./reducers/location"
 import region from "./reducers/region"
 import categorylist from "./reducers/categorylist"
+import citylist from "./reducers/citylist"
+import login from "./reducers/login"
 const reducers = combineReducers({
     home,
     location,
     region,
-    categorylist
+    categorylist,
+    citylist,
+    login,
 })
 
 const store = createStore(reducers,composeWithDevTools(applyMiddleware(reduxThunk)))

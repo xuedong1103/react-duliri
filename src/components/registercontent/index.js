@@ -13,8 +13,8 @@ class registercontent extends PureComponent {
         return (
             <RegiserBox>
             <section className="sectionbox">
-                <div><input type="text" placeholder="请输入手机号"/></div>
-                <div><input type="text" placeholder="请输入密码"/></div>
+                <div><input className="phoneNumber" type="text" placeholder="请输入手机号"/></div>
+                <div><input className="userPass" type="text" placeholder="请输入密码"/></div>
                 <div><button onClick={this.handleLand.bind(this)}>登陆</button><span>忘记密码?</span></div>
                 <div><span>登录注册表示同意</span><i>独立日服务条款</i></div>
             </section>
@@ -23,7 +23,7 @@ class registercontent extends PureComponent {
     }
 
     handleLand(){
-        console.log("xx")
+        console.log("RegiserBox")
     }
 }
 

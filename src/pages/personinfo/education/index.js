@@ -58,11 +58,12 @@ class SearchBarExample extends Component {
 
   handleAsyncList() {
     this.props.handlecityList();
-    console.log(this.props)
+    // console.log(this.props.cityList)
 
   }
   handleChange(val) {
     this.props.handlecityList(val);
+    // console.log(this.props.cityList)//城市列表
   }
 
   clear = () => {
@@ -75,26 +76,28 @@ class SearchBarExample extends Component {
     let { value } = this.state;
     let { cityList } = this.props;
 
-    let idList = cityList.movieList;
-    console.log(this.props)
+    let idList = cityList.cinemas;
+    // console.log(this.props)//props携带的值和属性
     return (
       <Fragment>
         <SearchBar onChange={this.handleChange.bind(this)} placeholder="请搜索学校" ref={ref => this.autoFocusInst = ref} />
         <SchoolContainer>
           <div className="ListName">学校列表</div>
           <ul>
+             {
+
+
+              idList? (idList.list).map((item, index) => (
+                <li key={index}>{item.nm}</li>
+              )) : ''
+            }
+
             {
               value.map((item, index) => (
               <li key={item.time}>{item.name}</li>
               ))
             }
-          {
-
-
-              idList ? idList.map((item, index) => (
-                <li key={index}>{item.nm}</li>
-              )) : ''
-            }
+         
 
           </ul>
 

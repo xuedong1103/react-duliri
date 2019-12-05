@@ -1,0 +1,1 @@
+export const loginAsyncType  = "USER_NAME"

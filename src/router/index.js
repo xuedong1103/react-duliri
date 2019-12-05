@@ -59,7 +59,7 @@ export const TabBarRoute = [
             requiredAuth:true
         },
         icon:"\ue617",
-        text:"我的"
+        text:"我的",
     }
 ];
 
