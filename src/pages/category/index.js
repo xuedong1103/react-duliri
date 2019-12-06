@@ -18,8 +18,9 @@ class Category extends Component{
             en: false,
             show: false,
             config: {},
-            flag:false
         };
+       
+       this.flag='none'
     }
     render(){
        
@@ -54,17 +55,18 @@ class Category extends Component{
               extra[+date] = info;
             }
           });        
-         let {flag}=this.state;
-          console.log(flag);
+          let flag=this.flag;
         return (
+            
             <CategoryContainer>
                 <StickyContainer className="sticky">
                 <Tabs tabs={tabs}
                     initialPage={0}
-                    onTabClick={this.handleChangeFlag.bind(this)}
+                    onChange={(tab, index) => { }}
+                    onTabClick={(tab, index) => {  }}
                 >
-                        <div style={{ display:(flag==true?"block":"none"), alignItems: 'center', justifyContent: 'center', height: '100%', backgroundColor: '#fff' ,overflow:'auto'}}>
-                            <div className="box"  onClick={this.handleChangeFlagFalse.bind(this)}>
+                        <div style={{ display: flag, alignItems: 'center', justifyContent: 'center', height: '100%', backgroundColor: '#fff' ,overflow:'auto'}}>
+                            <div className="box">
                                     <div className="modelContainer">
                                         <h2>餐饮酒店</h2>
                                         <span>服务员</span>
@@ -129,16 +131,16 @@ class Category extends Component{
                                     </div>
                             </div>
                         </div>
-                        <div style={{ display:(flag==true?"block":"none"), height: '100%', backgroundColor: '#fff' }}>
+                        <div style={{ display: flag, justifyContent: 'center', height: '100%', backgroundColor: '#fff' }}>
                             <List className="my-list">
                                 {
                                     regionList.map((item)=>(
-                                        <List.Item key={item.id} onClick={this.handleChangeFlagFalse.bind(this)}>{item.name}</List.Item>
+                                        <List.Item key={item.id}>{item.name}</List.Item>
                                     ))
                                 }
                             </List>
                         </div>
-                        <div style={{ display:(flag==true?"block":"none"), justifyContent: 'center', height: '100%', backgroundColor: '#fff' }}>
+                        <div style={{ display: flag, alignItems: 'center', justifyContent: 'center', height: '100%', backgroundColor: '#fff' }}>
                             <div className="calendar">
                             {/* {this.renderBtn('选择日期', 'Select Date', { type: 'one' })}
                             <List className="calendar-list" style={{ backgroundColor: 'white' }}>
@@ -157,21 +159,20 @@ class Category extends Component{
                             </div>
 
                         </div>
-                        <div style={{ display:(flag==true?"block":"none"), justifyContent: 'center', height: '100%', backgroundColor: '#fff' }}>
-                           筛选
+                        <div style={{ display: flag, alignItems: 'center', justifyContent: 'center', height: '100%', backgroundColor: '#fff' }}>
+                            Content of four tab
                         </div>   
                     </Tabs>      
                 </StickyContainer>
                 {/* <div className="list"></div> */}
-                <CategoryList style={{display:(flag==false?"block":"none")}}>
+                <CategoryList>
 
                 </CategoryList>
         </CategoryContainer>
         )
     }
     componentDidMount(){
-        let ci=localStorage.getItem('cityId');
-        this.props.handleAsyncRegion(ci)
+        this.props.handleAsyncRegion()
     }
 
     
@@ -189,16 +190,6 @@ class Category extends Component{
             {this.state.en ? en : zh}
           </List.Item>
         );
-      }
-      handleChangeFlag(){
-          this.setState({
-              flag:true
-          })
-      }
-      handleChangeFlagFalse(){
-          this.setState({
-              flag:false
-          })
       }
 }
 

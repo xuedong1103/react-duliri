@@ -8,7 +8,6 @@ export const CategoryListContainer=styled.div`
         margin-top:0.44rem;
         display:block;
         overflow-y:auto;
-        display:${props=>props.style};
         .content{
                 height:1rem;
                 background:#fff;
@@ -70,7 +69,7 @@ export const CategoryListContainer=styled.div`
                 margin-right:0.1rem;
         }
         .brandTitle{
-                font-size:11px;
+                font-size:12px;
                 height:0.3rem;
                 line-height:0.3rem;
                 margin-left:0.06rem;

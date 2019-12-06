@@ -5,6 +5,7 @@ import {CityContainer}  from "./styled"
 import {mapStateToProps,mapDispatchToProps} from "./mapStore"
 import {connect} from "react-redux";
 import {withRouter} from "react-router-dom"
+import { CombineLatestOperator } from 'rxjs/internal/observable/combineLatest';
 @withRouter
 @connect(mapStateToProps,mapDispatchToProps)
  class Location extends Component {
@@ -16,7 +17,8 @@ import {withRouter} from "react-router-dom"
     }
      
     render() {
-        let {location} = this.props;
+            console.log(this.props)
+       let {location} = this.props;
        
         let locationList=[];
         if(location.data){
@@ -31,8 +33,8 @@ import {withRouter} from "react-router-dom"
                 hotCity.push(locationList[i])
             }
         }
-        console.log(locationList);
         return (
+            
             <PageContainer>
                     <SearchBar
                         value={this.state.value}
@@ -51,7 +53,7 @@ import {withRouter} from "react-router-dom"
                         <div className="hotCity">
                            {
                                 hotCity.map((item)=>(
-                                    <span key={item.id} data-id={item.id} onClick={this.handleChangeRegion.bind(this,item.id,item.nm)}>{item.nm}</span>
+                                    <span key={item.id}>{item.nm}</span>
                                 ))
                             }
                         </div>
@@ -61,7 +63,7 @@ import {withRouter} from "react-router-dom"
                         </List>
                         {   
                             locationList.map((item)=>(
-                                    <List renderHeader={() => item.nm} className="my-list" key={item.id} data-id={item.id} onClick={this.handleChangeRegion.bind(this,item.id,item.nm)}>
+                                    <List renderHeader={() => item.nm} className="my-list" key={item.id}>
                                     </List>
                                
                             ))
@@ -79,14 +81,9 @@ import {withRouter} from "react-router-dom"
     }
 
     componentDidMount(){
-        
         this.props.handleAsyncLocation();
     }
-    handleChangeRegion(id,name){
-        localStorage.setItem('cityId',id);
-        localStorage.setItem('cityName',name)
-        this.props.history.push('/home');
-    }
+
 
 }
 export default Location;

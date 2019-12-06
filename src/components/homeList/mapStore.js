@@ -4,7 +4,7 @@ export const mapStateToProps=(state)=>({
 })
 
 export const mapDispatchToProps = (dispatch)=>({
-    handleAsyncHome(cityId){
-        dispatch(homeAsyncAction(cityId))
+    handleAsyncHome(){
+        dispatch(homeAsyncAction())
     }
 })
